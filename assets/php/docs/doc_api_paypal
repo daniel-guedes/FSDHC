@@ -1,0 +1,98 @@
+doc_api_paypal
+
+
+GET POST	/v1/payments/payment
+GET PATCH	/v1/payments/payment/<Payment-Id>
+POST	/v1/payments/payment/<Payment-Id>/execute/
+sale: look up and refund completed payments
+
+GET	/v1/payments/sale/<Transaction-Id>
+POST	/v1/payments/sale/<Transaction-Id>/refund
+refund: look up refund details
+
+GET	/v1/payments/refund/<Refund-Id>
+authorization: look up, capture, reauthorize, and void authorized payments
+
+GET	/v1/payments/authorization/<Authorization-Id>
+POST	/v1/payments/authorization/<Authorization-Id>/capture
+POST	/v1/payments/authorization/<Authorization-Id>/void
+POST	/v1/payments/authorization/<Authorization-Id>/reauthorize
+capture: look up and refund captured payments
+
+GET	/v1/payments/capture/<Capture-Id>
+POST	/v1/payments/capture/<Capture-Id>/refund
+billing plans: Create, retrieve, update, and list billing plans
+
+POST	/v1/payments/billing-plans
+GET PATCH	/v1/payments/billing-plans/<Plan-Id>
+GET	/v1/payments/billing-plans
+billing agreements: Create and manage billing agreements
+
+POST	/v1/payments/billing-agreements
+POST	/v1/payments/billing-agreements/<Payment-Token>/agreement-execute
+GET PATCH	/v1/payments/billing-agreements/<Agreement-Id>
+POST	/v1/payments/billing-agreements/<Agreement-Id>/suspend
+POST	/v1/payments/billing-agreements/<Agreement-Id>/re-activate
+POST	/v1/payments/billing-agreements/<Agreement-Id>/cancel
+POST	/v1/payments/billing-agreements/<Agreement-Id>/bill-balance
+POST	/v1/payments/billing-agreements/<Agreement-Id>/set-balance
+GET	/v1/payments/billing-agreements/<Agreement-Id>/transactions
+orders: Manage orders
+
+GET	/v1/payments/orders/<Order-Id>
+POST	/v1/payments/orders/<Order-Id>/authorize
+POST	/v1/payments/orders/<Order-Id>/do-void
+POST	/v1/payments/orders/<Order-Id>/capture
+POST	/v1/payments/capture/<Capture-Id>/refund
+payouts: Create and manage payouts
+
+POST	/v1/payments/payouts
+GET	/v1/payments/payouts/<Payout-Batch-Id>
+GET	/v1/payments/payouts-item/<Payout-Item-Id>
+POST	/v1/payments/payouts-item/<Payout-Item-Id>/cancel
+Vault namespace
+
+credit-card: Store and look up credit cards
+
+POST	/v1/vault/credit-cards
+DELETE GET PATCH	/v1/vault/credit-cards/<Credit-Card-Id>
+Identity namespace
+
+openidconnect: Allow customers to log in to your website with a PayPal account
+
+POST	/v1/identity/openidconnect/tokenservice
+GET	/v1/identity/openidconnect/userinfo/?<Schema>
+Invoicing namespace
+
+invoices: Create and work with invoices
+
+GET POST	/v1/invoicing/invoices
+GET PUT DELETE	/v1/invoicing/invoices/<Invoice-Id>
+GET	/v1/invoicing/invoices?<Query-String>
+GET	/v1/invoicing/invoices/<Invoice-Id>/qr-code?<Query-String>
+POST	/v1/invoicing/invoices/<Invoice-Id>/send
+POST	/v1/invoicing/invoices/<Invoice-Id>/remind
+POST	/v1/invoicing/invoices/<Invoice-Id>/cancel
+POST	/v1/invoicing/invoices/<Invoice-Id>/record-payment
+POST	/v1/invoicing/invoices/<Invoice-Id>/record-refund
+Payment-experience namespace
+
+web-profiles: Create and work with payment experience profiles
+
+POST GET	/v1/payment-experience/web-profiles
+GET PUT PATCH DELETE	/v1/payment-experience/web-profiles/<id>
+Notifications namespace
+
+webhooks: Create and manage webhooks
+
+GET POST	/v1/notifications/webhooks
+GET PATCH DELETE	/v1/notifications/webhooks/<Webhook-Id>
+GET	/v1/notifications/webhooks/<Webhook-Id>/event-types
+webhooks-events: Work with subscribed webhooks events
+
+GET	/v1/notifications/webhooks-events
+GET	/v1/notifications/webhooks-events/<Event-Id>
+POST	/v1/notifications/webhooks-events/<Event-Id>/resend
+webhooks-event-types: List available subscription event types for webhooks
+
+GET	/v1/notifications/webhooks-event-types
