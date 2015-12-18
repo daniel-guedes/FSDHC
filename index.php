@@ -1,3 +1,9 @@
+ <?php 
+ error_reporting();
+$nome = "";
+
+ ?>
+
     <!DOCTYPE html>
     <html lang="pt-BR">
       <head>
@@ -284,9 +290,101 @@
                 <h1 class="title">Doações</h1>
                 <h2 class="subtitle">Nos ajude a continuar lutando pelos seus direitos</h2>
 
-                <div class="wow fadeInDown">
-                    <img class="col-md-3 col-md-3 col-sm-3 col-xs-12" src="assets/img/clients/img1.png" alt="client-1">
+                <div class="navbar">
+                    Clique aqui para realizar sua Doação.                   
+                </div>
 
+                <div class="navbar" >
+                   <!-- <form accept-charset="utf-8" action="efetuar_doacao.php" method="POST" enctype="utf-8"> -->
+                        
+                        <div class="col-md-9 wow fadeInLeft" data-wow-delay='.5s'>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" class="form-control" placeholder="Informe seu nome" name="name" value="<?=$nome?>">Nome
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-9 wow fadeInLeft" data-wow-delay='.5s'>
+                            <div class="form-group">
+                                <div class="controls">
+                                            
+                                            fazer via jquery toda a parte dos botoes 
+                                            tentar fazer ajax com o site principal para resgatar valores q serao ultilizados para enviar para a ultima tela de confirmacao de pagamento.
+                                            se nao der certo abrir o proprio site do paypal MAIS nao vamos conseguir ter dados do cliente para salvar no banco de dados. so conseguiremos saber vendo o retorno de cada tranzacao (eu acho!)
+
+
+                                colocar funcao de mostrar o formulario igual ao site  https://www.paypal.com/br/cgi-bin/webscr
+                                e ao momento q o cliente clicar e abrir o formulario fazer com que já gere os valores cmd parametros do site.
+                                ai quando o cliente fazer o preenchimento dos dados enviar para o site do paypal dizendo Finalizar sigua os procedimentos do paypal.
+                                ate conseguir integracao com api do paypal.
+
+                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="JH335VBXHS5PL">
+                                            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+                                            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+                                        </form>
+                                        <iframe src="https://www.paypal-brasil.com.br/logocenter/util/img/botao-checkout_horizontal_doecom_ap.png">
+                                        <!-- PayPal Logo --><img  src="https://www.paypal-brasil.com.br/logocenter/util/img/botao-checkout_horizontal_doecom_ap.png" border="0" alt="Imagens de solução" /><!-- PayPal Logo -->
+                                        </iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                  <!--  </form> 
+
+    JÁ POSSUI UMA CONTA DO PAYPAL?
+E-mail:
+Senha:
+
+Esqueceu seu e-mail ou senha?
+País: 
+Nome:
+Sobrenome completo:
+Data de nascimento:
+Data de nascimento /  / 
+Por quê?Somos obrigados por lei a coletar estas informações.
+Somos obrigados por lei a coletar estas informações.
+CPF:
+Por quê?Todas as transações devem conter um número de CPF válido para o cartão de crédito associado.(11 dígitos, apenas números)
+Número do cartão de crédito:
+
+Tipo de pagamento:
+Visa
+MasterCard
+American Express
+HiperCard
+Elo
+Hiper
+Data de vencimento:
+Mês/Ano
+CSC:
+
+O que é isto?
+
+No caso de MasterCard, Visa, Hipercard, Elo, Hiper ou Discover, são os últimos três dígitos na área de assinatura, no verso do cartão. Para o American Express, são os quatro dígitos na frente do cartão.
+CEP:
+Endereço:Por exemplo: Av. Brigadeiro Faria Lima, 25- Edifício 2 - Apt 44A
+Bairro:
+Cidade:
+Estado:
+Telefone residencial: (+55)
+E-mail:
+Criar uma senha do PayPal:
+
+(no mínimo 8 caracteres)
+Confirmar senha:
+
+
+                    https://www.paypal.com/br/cgi-bin/webscr?cmd=_flow&SESSION=q-PBUznqKHmlFlZldjXraVtVfEZdkeMfWCgQqCMTm90GalMAWd2GmwMsnpS&dispatch=5885d80a13c0db1f8e263663d3faee8d64ad11bbf4d2a5a1a0d303a50933f9b2&first_name=william
+                  -->
+                </div>
+<br />
+<br />
+<br />
+                    <img class="col-md-3 col-md-3 col-sm-3 col-xs-12" src="assets/img/clients/img1.png" alt="client-1">
+                    
                     <img class="col-md-3 col-md-3 col-sm-3 col-xs-12" src="assets/img/clients/img2.png" alt="client-2">
 
                     <img class="col-md-3 col-md-3 col-sm-3 col-xs-12" src="assets/img/clients/img3.png" alt="client-3">
