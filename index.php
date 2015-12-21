@@ -1,7 +1,8 @@
  <?php 
- error_reporting();
+ error_reporting(E_ALL);
 $nome = "";
 
+$env = "testes";
  ?>
 
     <!DOCTYPE html>
@@ -9,7 +10,7 @@ $nome = "";
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FSDHC</title>
+        <title>FSDHC</title>s
 
         
 
@@ -295,7 +296,26 @@ $nome = "";
                 </div>
 
                 <div class="navbar" >
-                   <!-- <form accept-charset="utf-8" action="efetuar_doacao.php" method="POST" enctype="utf-8"> -->
+                   <!-- <form accept-charset="utf-8" action="efetuar_doacao.php" method="POST" enctype="utf-8"> 
+
+fsdhc-facilitator@hotmail.com
+
+               -->
+
+               <?php 
+                if($env=="teste"){
+                   // testing https://api.sandbox.paypal.com
+                   // production: https://api.paypal.com
+                   $url = "https://api.sandbox.paypal.com";
+                    
+
+                    echo "Para doar clique aqui";
+
+                }else{
+                    $url = "https://api.paypal.com";
+                    
+               
+               ?>
                         
                         <div class="col-md-9 wow fadeInLeft" data-wow-delay='.5s'>
                             <div class="form-group">
@@ -309,29 +329,24 @@ $nome = "";
                             <div class="form-group">
                                 <div class="controls">
                                             
-                                            fazer via jquery toda a parte dos botoes 
-                                            tentar fazer ajax com o site principal para resgatar valores q serao ultilizados para enviar para a ultima tela de confirmacao de pagamento.
-                                            se nao der certo abrir o proprio site do paypal MAIS nao vamos conseguir ter dados do cliente para salvar no banco de dados. so conseguiremos saber vendo o retorno de cada tranzacao (eu acho!)
+                                        fazer via jquery toda a parte dos botoes 
+                                        tentar fazer ajax com o site principal para resgatar valores q serao ultilizados para enviar para a ultima tela de confirmacao de pagamento.
+                                        se nao der certo abrir o proprio site do paypal MAIS nao vamos conseguir ter dados do cliente para salvar no banco de dados. so conseguiremos saber vendo o retorno de cada tranzacao (eu acho!)
 
 
-                                colocar funcao de mostrar o formulario igual ao site  https://www.paypal.com/br/cgi-bin/webscr
-                                e ao momento q o cliente clicar e abrir o formulario fazer com que já gere os valores cmd parametros do site.
-                                ai quando o cliente fazer o preenchimento dos dados enviar para o site do paypal dizendo Finalizar sigua os procedimentos do paypal.
-                                ate conseguir integracao com api do paypal.
+                                        colocar funcao de mostrar o formulario igual ao site  https://www.paypal.com/br/cgi-bin/webscr
+                                        e ao momento q o cliente clicar e abrir o formulario fazer com que já gere os valores cmd parametros do site.
+                                        ai quando o cliente fazer o preenchimento dos dados enviar para o site do paypal dizendo Finalizar sigua os procedimentos do paypal.
+                                        ate conseguir integracao com api do paypal.
 
-                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                            <input type="hidden" name="hosted_button_id" value="JH335VBXHS5PL">
-                                            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
-                                            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-                                        </form>
-                                        <iframe src="https://www.paypal-brasil.com.br/logocenter/util/img/botao-checkout_horizontal_doecom_ap.png">
-                                        <!-- PayPal Logo --><img  src="https://www.paypal-brasil.com.br/logocenter/util/img/botao-checkout_horizontal_doecom_ap.png" border="0" alt="Imagens de solução" /><!-- PayPal Logo -->
-                                        </iframe>
-
+                                        <a  href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=JH335VBXHS5PL">
+                                            <button>Doar c/ Paypal</button>
+                                        </a>
+s
                                 </div>
                             </div>
                         </div>
+                <? } ?>
                   <!--  </form> 
 
     JÁ POSSUI UMA CONTA DO PAYPAL?
